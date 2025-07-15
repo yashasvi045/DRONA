@@ -5,15 +5,24 @@ Drones will revolutionize delivery in the next decade. But the infrastructure to
 
 # What Makes It Unique
 📍 Local node placement every 5–10 km
+
 🔗 Smart contracts to log drone passage and compliance
+
 🌐 Decentralized, real-time authentication
+
 🎯 Designed for lightweight drone logistics over rooftops
+
 💬 Community-hosted nodes with potential incentive models
 
 # Tech Stack
 Python – Drone simulation, node APIs
+
 Solidity – Smart contracts for authentication
+
 Web3.py – Node ↔ Blockchain interaction
+
 Flask – Node server setup
+
 Mapbox / Leaflet.js – Drone path visualization
+
 Ethereum testnet – Contract deployment and testing
