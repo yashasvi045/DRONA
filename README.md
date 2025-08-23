@@ -1,4 +1,4 @@
-## Drone Mesh Tracker — Decentralized Low-Altitude UAV Traffic System
+## Drone Mesh Tracker —> Decentralized Low-Altitude UAV Traffic System
 
 # Vision
 Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage these flights, especially in low-altitude city corridors is still missing. Drone Mesh Tracker aims to fill this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
