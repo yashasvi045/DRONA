@@ -222,3 +222,5 @@ Competitive with commercial centralized platforms, without requiring central inf
 - Blockchain adds per-transaction cost and ~2–15 s confirmation latency - unsuitable for hard real-time control, by design used only as the audit layer.
 - In-memory position store is not persistent across restarts - a deliberate simplification for prototype phase.
 - Current simulation uses synthetic Kolkata routes; production would require live GNSS feeds.
+
+Copyright © 2026 Yashasvi. All Rights Reserved.
