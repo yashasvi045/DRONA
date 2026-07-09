@@ -29,11 +29,14 @@ export default function SystemStatus({ onClose }) {
     fetch(`${API}/health`)
       .then(r => r.json())
       .then(setHealth)
-      .catch(e => setError('Cannot reach backend - is it running?'))
+      .catch(() => setError('Cannot reach backend - is it running?'))
       .finally(() => setLoading(false))
   }, [])
 
-  useEffect(() => { fetchHealth() }, [fetchHealth])
+  useEffect(() => {
+    const timer = setTimeout(fetchHealth, 0)
+    return () => clearTimeout(timer)
+  }, [fetchHealth])
 
   // Close on backdrop click
   const onBackdrop = e => { if (e.target === e.currentTarget) onClose() }

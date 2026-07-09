@@ -17,7 +17,10 @@ export default function PassageLog({ selectedDrone }) {
       .finally(() => setLoading(false))
   }, [selectedDrone, tick]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => { fetchLogs() }, [fetchLogs])
+  useEffect(() => {
+    const timer = setTimeout(fetchLogs, 0)
+    return () => clearTimeout(timer)
+  }, [fetchLogs])
 
   if (!selectedDrone) {
     return <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Click a drone marker to see its passage log</p>

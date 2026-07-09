@@ -109,6 +109,12 @@ cd frontend && npx vite --port 5173
 
 ### Stop / Shutdown
 
+Quick stop helper (if configured in your local shell):
+
+```powershell
+.\Stop
+```
+
 If you started with `./start.ps1`:
 
 - Close the terminal windows it opened (Hardhat, backend, simulation, frontend).

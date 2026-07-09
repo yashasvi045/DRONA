@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -61,7 +61,7 @@ const ROUTE_COLOURS = {
   'ROUTE-SOUTH-LOOP':  '#f59e0b',
 }
 
-// Ref-based trail: keep last N positions per drone
+// Keep last N positions per drone
 const MAX_TRAIL = 80
 
 function TrailPolyline({ trail, colour }) {
@@ -69,23 +69,34 @@ function TrailPolyline({ trail, colour }) {
   return <Polyline positions={trail} color={colour} weight={2} opacity={0.7} />
 }
 
-// Keeps trails in a ref so re-renders don't lose them
 function DroneLayer({ positions, onDroneClick }) {
-  const trailsRef = useRef({})
+  const [trails, setTrails] = useState({})
 
-  Object.entries(positions).forEach(([id, pos]) => {
-    if (!trailsRef.current[id]) trailsRef.current[id] = []
-    const trail = trailsRef.current[id]
-    const last = trail[trail.length - 1]
-    if (!last || last[0] !== pos.lat || last[1] !== pos.lon) {
-      trail.push([pos.lat, pos.lon])
-      if (trail.length > MAX_TRAIL) trail.shift()
-    }
-  })
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTrails(prev => {
+        const next = { ...prev }
+
+        Object.entries(positions).forEach(([id, pos]) => {
+          const existing = next[id] ? [...next[id]] : []
+          const last = existing[existing.length - 1]
+          if (!last || last[0] !== pos.lat || last[1] !== pos.lon) {
+            existing.push([pos.lat, pos.lon])
+            if (existing.length > MAX_TRAIL) existing.shift()
+            next[id] = existing
+          }
+        })
+
+        return next
+      })
+    }, 0)
+
+    return () => clearTimeout(timer)
+  }, [positions])
 
   return Object.entries(positions).map(([id, pos]) => {
     const colour = ROUTE_COLOURS[pos.route] ?? '#3b82f6'
-    const trail = trailsRef.current[id] ?? []
+    const trail = trails[id] ?? []
     return (
       <div key={id}>
         <TrailPolyline trail={trail} colour={colour} />
