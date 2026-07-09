@@ -1,0 +1,48 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── Theme variables ── */
+:root, [data-theme="dark"] {
+  --bg-base:       #0d0d0d;
+  --bg-surface:    #111111;
+  --bg-header:     #141414;
+  --border:        #1e1e1e;
+  --border-subtle: #1a1a1a;
+  --text-primary:  #ffffff;
+  --text-secondary:#cccccc;
+  --text-muted:    #aaaaaa;
+  --badge-live-bg: #065f46;
+  --badge-live-fg: #6ee7b7;
+  --badge-off-bg:  #1a1a1a;
+  --badge-off-fg:  #6b7280;
+  --accent-blue:   #3b82f6;
+  --accent-orange: #f97316;
+}
+
+[data-theme="light"] {
+  --bg-base:       #f0f2f5;
+  --bg-surface:    #ffffff;
+  --bg-header:     #e4e6ea;
+  --border:        #d1d5db;
+  --border-subtle: #e5e7eb;
+  --text-primary:  #1a1a1a;
+  --text-secondary:#2d2d2d;
+  --text-muted:    #3d3d3d;
+  --badge-live-bg: #d1fae5;
+  --badge-live-fg: #065f46;
+  --badge-off-bg:  #e5e7eb;
+  --badge-off-fg:  #3d3d3d;
+  --accent-blue:   #2563eb;
+  --accent-orange: #ea6a0a;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', 'Agency FB', Impact, 'Arial Narrow', sans-serif;
+  overflow: hidden;
+}
+

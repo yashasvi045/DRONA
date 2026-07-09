@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Hardhat compilation output (reproducible, no need to commit)
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# Local environment & secrets (NEVER commit private keys or RPC URLs)
+.env
+.env.*
+!.env.example
+
+# Hardhat local network data
+deployments/localhost/
+deployments/hardhat/
+
+# VS Code Hardhat temp config files
+.vscode_hardhat_config_*.ts
+
+# Coverage reports
+coverage/
+coverage.json
+
+# Misc
+.DS_Store
+*.log
+projectLog.md
+addDrone.md
+tokenomics.md
+hackathon.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage

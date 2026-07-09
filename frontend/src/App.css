@@ -1,0 +1,123 @@
+/* Dashboard layout */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+/* ── Header ── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 48px;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.app-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-family: 'Rajdhani', 'Agency FB', Impact, sans-serif;
+  color: var(--text-primary);
+}
+
+.conn-badge {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.conn-live {
+  background: var(--badge-live-bg);
+  color: var(--badge-live-fg);
+}
+
+.conn-off {
+  background: var(--badge-off-bg);
+  color: var(--badge-off-fg);
+}
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+.theme-toggle:hover {
+  border-color: var(--text-secondary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Body ── */
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+}
+
+.panel {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panel-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+}
+
+/* ── Map ── */
+.map-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-area .leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: var(--bg-base);
+}
+
+/* Leaflet popup font */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-content,
+.leaflet-popup-tip {
+  font-family: 'Rajdhani', 'Agency FB', Impact, sans-serif !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
