@@ -3,7 +3,7 @@
 > **Research Prototype** - This is an open research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product. The architecture is designed to be academically reproducible and demonstrable on real hardware.
 
 # Vision
-Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage these flights, especially in low-altitude city corridors is still missing. Drone Mesh Tracker fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
+Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage these flights, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
 
 This project addresses questions that remain open in the UTM (Unmanned Traffic Management) research community:
 - What happens when GPS is jammed, spoofed, or unavailable in dense urban airspace?
@@ -13,11 +13,11 @@ This project addresses questions that remain open in the UTM (Unmanned Traffic M
 These are active research questions at **NASA (UTM project)**, **FAA (BEYOND program)**, and the **EU (U-space initiative)**. No clear industry winner exists yet.
 
 # What Is Unique
-Local node placement every 5–10 km
-Smart contracts to log drone passage and compliance
-Decentralized, real-time authentication
-Designed for lightweight drone logistics over rooftops
-Community-hosted nodes with potential incentive models
+- Local node placement every 5–10 km.
+- Smart contracts to log drone passage and compliance.
+- Decentralized, real-time authentication.
+- Designed for lightweight drone logistics over rooftops.
+- Community-hosted nodes with potential incentive models.
 
 ---
 
@@ -152,7 +152,7 @@ foreach ($p in 5173, 8001, 8545, 1883) {
 # Project Structure
 
 ```
-dronemeshtracker/
+DRONA/
 ├── contracts/          Solidity smart contracts (DroneRegistry.sol)
 ├── scripts/            Hardhat deploy scripts
 ├── test/               Hardhat contract unit tests (16 tests)
@@ -205,7 +205,7 @@ dronemeshtracker/
 - ADS-B (commercial aircraft) - ~1–2 sec
 - UTM systems (NASA/FAA prototype) - ~500 ms–2 sec
 - DJI FlightHub (centralized) - ~100–200 ms
-- **Drone Mesh Tracker (this stack) - ~150–300 ms** ✓
+- **DRONA (this stack) - ~150–300 ms** ✓
 
 Competitive with commercial centralized platforms, without requiring central infrastructure.
 
@@ -222,5 +222,7 @@ Competitive with commercial centralized platforms, without requiring central inf
 - Blockchain adds per-transaction cost and ~2–15 s confirmation latency - unsuitable for hard real-time control, by design used only as the audit layer.
 - In-memory position store is not persistent across restarts - a deliberate simplification for prototype phase.
 - Current simulation uses synthetic Kolkata routes; production would require live GNSS feeds.
+
+# Copyright and Licensing
 
 Copyright © 2026 Yashasvi. All Rights Reserved.
