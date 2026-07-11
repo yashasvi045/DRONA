@@ -1,8 +1,8 @@
-﻿## DRONA: A Decentralized Low-Altitude UAVs Traffic System
+﻿# DRONA: A Decentralized Low-Altitude UAVs Traffic System
 
 > **Research Prototype** - This is an open research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product. The architecture is designed to be academically reproducible and demonstrable on real hardware.
 
-# Vision
+## Vision
 Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage these flights, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
 
 This project addresses questions that remain open in the UTM (Unmanned Traffic Management) research community:
@@ -12,7 +12,7 @@ This project addresses questions that remain open in the UTM (Unmanned Traffic M
 
 These are active research questions at **NASA (UTM project)**, **FAA (BEYOND program)**, and the **EU (U-space initiative)**. No clear industry winner exists yet.
 
-# What Is Unique
+## What Is Unique
 - Local node placement every 5–10 km.
 - Smart contracts to log drone passage and compliance.
 - Decentralized, real-time authentication.
@@ -21,7 +21,7 @@ These are active research questions at **NASA (UTM project)**, **FAA (BEYOND pro
 
 ---
 
-# Prerequisites
+## Prerequisites
 
 | Requirement | Version | Notes |
 |---|---|---|
@@ -34,7 +34,7 @@ Mosquitto must be running as a Windows service on port 1883 before starting the 
 
 ---
 
-# Setup (one-time)
+## Setup (one-time)
 
 ```powershell
 # 1. Clone
@@ -60,7 +60,7 @@ npx hardhat compile
 
 ---
 
-# Running
+## Running
 
 ### Option A - Single startup script (recommended)
 
@@ -149,7 +149,7 @@ foreach ($p in 5173, 8001, 8545, 1883) {
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
 DRONA/
@@ -166,7 +166,7 @@ DRONA/
 
 ---
 
-# Tech Stack
+## Tech Stack
 
 **Frontend**
 - React + Vite - dashboard UI
@@ -191,7 +191,7 @@ DRONA/
 
 > Blockchain is the *compliance/audit layer* (async, ~2–15s block confirmation). Real-time tracking runs over MQTT → Redis → WebSocket only, keeping the latency-critical path off-chain.
 
-# Real-Time Tracking Latency
+## Real-Time Tracking Latency
 
 **End-to-end path (real drone over 4G, same city): ~150–300 ms**
 
@@ -200,7 +200,7 @@ DRONA/
 - Backend → WebSocket → Frontend `20–60 ms`
 - Map re-render `16–33 ms`
 
-## How It Compares
+### How It Compares
 
 - ADS-B (commercial aircraft) - ~1–2 sec
 - UTM systems (NASA/FAA prototype) - ~500 ms–2 sec
@@ -209,7 +209,7 @@ DRONA/
 
 Competitive with commercial centralized platforms, without requiring central infrastructure.
 
-# Technical Credibility
+## Technical Credibility
 
 **Why the architecture is sound:**
 
@@ -223,6 +223,6 @@ Competitive with commercial centralized platforms, without requiring central inf
 - In-memory position store is not persistent across restarts - a deliberate simplification for prototype phase.
 - Current simulation uses synthetic Kolkata routes; production would require live GNSS feeds.
 
-# Copyright and Licensing
+## Copyright and Licensing
 
 Copyright © 2026 Yashasvi. All Rights Reserved.
