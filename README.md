@@ -1,6 +1,6 @@
 ﻿# DRONA: A Decentralized Low-Altitude UAVs Traffic System
 
-> **Research Prototype** - This is an open research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product. The architecture is designed to be academically reproducible and demonstrable on real hardware.
+> **Research Prototype** - This is a research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product. The architecture is designed to be demonstrable on real hardware.
 
 ## Vision
 Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage these flights, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
