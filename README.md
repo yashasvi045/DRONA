@@ -3,7 +3,7 @@
 > **Research Prototype** - This is a research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product. The architecture is designed to be demonstrable on real hardware.
 
 ## Vision
-Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage these flights, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
+Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage them, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
 
 This project addresses questions that remain open in the UTM (Unmanned Traffic Management) research community:
 - What happens when GPS is jammed, spoofed, or unavailable in dense urban airspace?
