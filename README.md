@@ -1,19 +1,16 @@
 ﻿# DRONA: A Decentralized Low-Altitude UAVs Traffic System
 
-> **Research Prototype** - This is a research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product. The architecture is designed to be demonstrable on real hardware.
+> **Research Prototype** - This is a research system exploring decentralized, blockchain-anchored UAV traffic management. It is not a commercial product.
 
 ## Vision
-Drones will revolutionize delivery in the next decade. But the infrastructure to track, authenticate, and manage them, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
+Drones will revolutionize delivery in the next decade. But the infrastructure to track them, especially in low-altitude city corridors is still missing. DRONA fills this gap with a blockchain-authenticated, node-based traffic layer built from the ground up.
 
-This project addresses questions that remain open in the UTM (Unmanned Traffic Management) research community:
+This project addresses questions that remain open in the UTM (Unmanned Traffic Management) research:
 - What happens when GPS is jammed, spoofed, or unavailable in dense urban airspace?
-- Who arbitrates airspace conflicts when there is no central authority?
 - How do you create tamper-proof audit trails for near-miss incidents at scale?
 
-These are active research questions at **NASA (UTM project)**, **FAA (BEYOND program)**, and the **EU (U-space initiative)**. No clear industry winner exists yet.
-
 ## What Is Unique
-- Local node placement every 5–10 km.
+- Local node placement.
 - Smart contracts to log drone passage and compliance.
 - Decentralized, real-time authentication.
 - Designed for lightweight drone logistics over rooftops.
@@ -191,31 +188,13 @@ DRONA/
 
 > Blockchain is the *compliance/audit layer* (async, ~2–15s block confirmation). Real-time tracking runs over MQTT → Redis → WebSocket only, keeping the latency-critical path off-chain.
 
-## Real-Time Tracking Latency
-
-**End-to-end path (real drone over 4G, same city): ~150–300 ms**
-
-- Drone → MQTT Broker `30–80 ms`
-- Backend → Redis cache `< 2 ms`
-- Backend → WebSocket → Frontend `20–60 ms`
-- Map re-render `16–33 ms`
-
-### How It Compares
-
-- ADS-B (commercial aircraft) - ~1–2 sec
-- UTM systems (NASA/FAA prototype) - ~500 ms–2 sec
-- DJI FlightHub (centralized) - ~100–200 ms
-- **DRONA (this stack) - ~150–300 ms** ✓
-
-Competitive with commercial centralized platforms, without requiring central infrastructure.
-
 ## Technical Credibility
 
-**Why the architecture is sound:**
+**Why the architecture works:**
 
 - **Mesh nodes as independent verifiers** - each node cross-validates passage without trusting a central server, a practical application of Byzantine fault-tolerant distributed systems.
 - **On-chain passage logs** - immutable, timestamped records of every drone transit through a node. Directly applicable to insurance liability and incident investigation use cases.
-- **Separation of concerns** - real-time control runs entirely off-chain (MQTT → WebSocket), while audit/compliance is written to the chain asynchronously. This is the correct design pattern for latency-sensitive distributed systems.
+- **Separation of concerns** - real-time control runs entirely off-chain (MQTT → WebSocket), while audit/compliance is written to the chain asynchronously.
 - **MQTT over cellular** - telemetry continues even under GPS degradation, since node proximity is determined independently of satellite positioning.
 
 **Known research limitations (intentional trade-offs):**
